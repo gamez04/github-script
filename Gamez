@@ -1,0 +1,13 @@
+di : pull_request
+
+pekerjaan :
+   diff :
+     running-on : ubuntu- 
+    langkah terbaru :
+      - using : actions / github-script @ v3 
+        dengan :
+           github-token : $ {{secret.GITHUB_TOKEN}} 
+          skrip : | 
+            const diff_url = context.payload.pull_request.diff_url 
+            hasil const = menunggu github.request (diff_url) 
+            console.log (hasil)
